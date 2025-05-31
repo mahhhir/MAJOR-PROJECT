@@ -67,60 +67,7 @@
       border-color: #7be37b;
     }
 
-    .hero-image {
-      width: 100%;
-      height: 633px; 
-      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("iStock-1290318417-1200x633.jpg");
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      position: relative;
-    }
-
-    .hero-text {
-      position: absolute;
-      top: 50%;
-      left: 20%;
-      transform: translate(0, -50%);
-      color: white;
-      font-family: "Figtree", sans-serif;
-      text-align: left;
-    }
-
-    .hero-text h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
-      font-weight: 700;
-    }
-
-    .hero-text p {
-      font-size: 20px;
-      margin-bottom: 40px;
-      font-weight: 400;
-    }
-
-    .hero-text a {
-      border: 2px solid #a6e5a6;
-      border-radius: 80px;              
-      background-color: #7be37b;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      outline: 0;
-      display: inline-block;
-      padding: 15px 30px;
-      color: white;
-      text-align: center;
-      cursor: pointer;
-      font-size: 16px;
-      font-weight: 600;
-    }
-
-    .hero-text a:hover {
-      background-color: #5fd85f;        
-      border-color: #5fd85f;
-      transform: translateY(-2px);
-    }
-
+    
  .footer {
       width: 100%;
       padding: 60px 5%;
