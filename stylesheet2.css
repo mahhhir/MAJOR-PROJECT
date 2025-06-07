@@ -1,0 +1,181 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Figtree', sans-serif;
+}
+
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #ccf5cc;
+    gap: 20px;
+}
+
+.logo-header {
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.header-logo {
+    height: 80px;
+    max-width: 100%;
+}
+
+.container {
+    position: relative;
+    max-width: 430px;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.container .form {
+    padding: 30px;
+}
+
+.container .form .title {
+    position: relative;
+    font-size: 27px;
+    font-weight: 600;
+    color: #333;
+}
+
+.form .title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    height: 3px;
+    width: 30px;
+    background-color: #ccf5cc;
+    border-radius: 25px;
+}
+
+.form .input-field {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.input-field input {
+    height: 100%;
+    width: 100%;
+    padding: 0 35px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #ccc;
+    border-top: 2px solid transparent;
+    font-size: 16px;
+    transition: all 0.2s ease;
+    background: transparent;
+}
+
+.input-field input:is(:focus, :valid) {
+    border-bottom-color: #ccf5cc;
+}
+
+.input-field i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 23px;
+    transition: all 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid) ~ i {
+    color: #ccf5cc;
+}
+
+.input-field i.icon {
+    left: 0;
+}
+
+.input-field i.showHidePw {
+    right: 0;
+    cursor: pointer;
+}
+
+.form .checkbox-text {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.checkbox-text .checkbox-content {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-content input {
+    margin: 0 8px 0 4px;
+    accent-color: #7be37b;
+}
+
+.checkbox-text .text {
+    color: #333;
+    font-size: 14px;
+}
+
+.checkbox-text a {
+    color: #7be37b;
+    text-decoration: none;
+}
+
+.checkbox-text a:hover {
+    text-decoration: underline;
+}
+
+.form .button {
+    margin-top: 35px;
+}
+
+.form .button input {
+    height: 50px;
+    width: 100%;
+    border: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    background-color: #ccf5cc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.form .button input:hover {
+    background-color: #7be37b;
+}
+
+.form .login-signup {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.login-signup .text {
+    color: #333;
+    font-size: 14px;
+}
+
+.login-signup a {
+    color: #ccf5cc;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.login-signup a:hover {
+    text-decoration: underline;
+}
