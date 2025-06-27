@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
 
               
-                alert('Login successful! Welcome to NSW Health Portal.');
+                alert('Login successful! Welcome to NSW Doctor Portal.');
                 
               
                 setTimeout(function() {
@@ -88,21 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function addInputValidation() {
         const inputs = [emailInput, passwordInput];
         
-        inputs.forEach(input => {
-            if (input) {
-                input.addEventListener('blur', function() {
-                    if (this.value.trim() === '') {
-                        this.style.borderColor = '#ff6b6b';
-                    } else {
-                        this.style.borderColor = '#ddd';
-                    }
-                });
-
-                input.addEventListener('focus', function() {
-                    this.style.borderColor = '#4CAF50';
-                });
-            }
-        });
+      
     }
 
     addInputValidation();
