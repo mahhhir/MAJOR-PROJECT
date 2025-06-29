@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>About Us</title>
-  <link rel="stylesheet" href="stylesheet1.css">
+  <title>index</title>
+  <link rel="stylesheet" href="stylesheet.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
@@ -13,32 +13,22 @@
     </a>
     <nav>
       <ul class="nav_bar">
-        <li><a href="signup_login.html">Login</a></li>
+        <li><a href="">Patient Dashboard</a></li>
+        <li><a href="">Consultation</a></li>
+        <li><a href="index.html">Logout</a></li>
       </ul>
     </nav>
   </header>
 
-  <div class="mission-section">
-    <iframe 
-      src="https://www.google.com/maps/d/embed?mid=1Nsv9jtO0iEu1sz0UgKwfBpduD5rUtgsT&ehbc=2E312F" 
-      width="700" 
-      height="640">
-    </iframe>
-    
-    <div class="mission-text">
-      <h2>Our Mission</h2>
-      <p>
-        At NSW Health for Rural & Regional Communities, our mission is to ensure every individual in regional and remote New South Wales can access timely, quality healthcare, no matter where they live.
-        <br><br>
-        We aim to bridge the gap between rural communities and general practitioners by offering fast, simple online consultations through a guided form. By removing the barriers of distance and wait times, we empower people to share their concerns and connect with doctors who care. Click on the coloured sections of the map to see if your area is considered rural or regional for further information on the services available.
-        <br><br>
-        <b>Your health matters, wherever you are.</b>
-      </p>
+  <div class="hero-image">
+    <div class="hero-text">
+      <h1>NSW Health for Rural & Regional Communities</h1>
+      <p>Your direct path to consultations and resources</p>
+      <a href="about us.html" id="mission-button">Our Mission</a>
     </div>
   </div>
 
   <script>
-   
     document.addEventListener('DOMContentLoaded', function() {
       const newsletterForm = document.getElementById('newsletterForm');
       const emailInput = document.getElementById('newsletterEmail');
@@ -49,17 +39,14 @@
           
           const email = emailInput.value.trim();
           
-          
           const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
           if (!emailRegex.test(email)) {
             alert('Please enter a valid email address.');
             return;
           }
-          
-       
+        
           alert('Thank you for subscribing to NSW Health updates! You will receive health news and rural healthcare information.');
           
-        
           emailInput.value = '';
         });
       }

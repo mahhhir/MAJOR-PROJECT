@@ -26,27 +26,61 @@
     </div>
   </div>
 
+  <script>
+   
+    document.addEventListener('DOMContentLoaded', function() {
+      const newsletterForm = document.getElementById('newsletterForm');
+      const emailInput = document.getElementById('newsletterEmail');
+      
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          const email = emailInput.value.trim();
+          
+     
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(email)) {
+            alert('Please enter a valid email address.');
+            return;
+          }
+          
+    
+          alert('Thank you for subscribing to NSW Health updates! You will receive health news and rural healthcare information.');
+          
+  
+          emailInput.value = '';
+        });
+      }
+    });
+  </script>
+
   <footer class="footer">
     <div class="col-1">
       <h3>Quick Links</h3>
-      <a href="#">Main</a>
-      <a href="#">Consultation</a>
-      <a href="#">Symptom Tracker</a>
-      <a href="#">Resource Availability</a>
-      <a href="#">Doctor Login</a>
+      <a href="https://www.health.nsw.gov.au/" target="_blank">NSW Health</a>
+      <a href="https://www.flyingdoctor.org.au/" target="_blank">Royal Flying Doctor Service</a>
+      <a href="https://www.amansw.com.au/" target="_blank">Australian Medical Association NSW</a>
+      <a href="https://www.nswrdn.com.au/" target="_blank">NSW Rural Doctors Network</a>
     </div>
 
     <div class="col-2">
-      <h3>Subscribe to the NSW Health Newsletter</h3>
-      <div class="form">
-        <input type="email" placeholder="Your email" required>
-        <button type="submit">Submit</button>
-      </div>
+      <h3>Stay Connected</h3>
+      <p>Subscribe to receive health updates and rural healthcare news</p>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" id="newsletterEmail" placeholder="Enter your email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
     </div>
 
-    <div class="col-1">
+    <div class="col-3">
       <h3>Contact Us</h3>
-      <a href="#">1800 022 222</a>
+      <a href="tel:1800022222">1800 022 222</a>
+      <p>24/7 Health Information</p>
+      <div class="contact-info">
+        <p>NSW Health</p>
+        <p>Rural & Regional Services</p>
+      </div>
     </div>
   </footer>
 </body>
