@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Health Consultation - Symptoms</title>
+  <link rel="stylesheet" href="quizstyle.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <div class="quiz-container">
+    <div class="quiz-header">
+      <h1>Health Consultation Quiz</h1>
+      <div class="progress-bar">
+        <div class="progress" style="width: 40%"></div>
+      </div>
+      <p class="step-counter">Step 2 of 5</p>
+    </div>
+    
+    <div class="quiz-content">
+      <h2>Describe Your Symptoms</h2>
+      <form id="symptomsForm">
+        <div class="form-group">
+          <label for="symptoms">Please describe your current symptoms in detail:</label>
+          <textarea id="symptoms" name="symptoms" rows="6" placeholder="Include when symptoms started, how they feel, and any factors that make them better or worse..." required></textarea>
+          <div class="char-counter">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="severity">How would you rate your symptom severity?</label>
+          <select id="severity" name="severity" required>
+            <option value="">Please select</option>
+            <option value="mild">Mild - Minor discomfort</option>
+            <option value="moderate">Moderate - Noticeable but manageable</option>
+            <option value="severe">Severe - Significantly impacts daily activities</option>
+            <option value="very-severe">Very Severe - Unable to function normally</option>
+          </select>
+        </div>
+        
+        <div class="form-actions">
+          <button type="button" class="back-btn" onclick="window.location.href='quiz1.html'">Back</button>
+          <button type="submit" class="next-btn">Next</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('symptomsForm');
+      const symptomsTextarea = document.getElementById('symptoms');
+    
+      
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+
+    
+        alert('Proceeding to next question.');
+        window.location.href = 'quiz3.html';
+      });
+    });
+  </script>
+</body>
+</html>

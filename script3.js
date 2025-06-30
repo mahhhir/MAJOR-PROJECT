@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
            
             setTimeout(function() {
-                window.location.href = 'index.html'; // or patient-dashboard.html
+                window.location.href = 'indexforpatient.html'; 
             }, 1000);
         });
     }

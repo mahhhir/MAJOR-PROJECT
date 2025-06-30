@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Health Consultation - Appointment Booking</title>
+  <link rel="stylesheet" href="quizstyle.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <div class="quiz-container">
+    <div class="quiz-header">
+      <h1>Health Consultation Quiz</h1>
+      <div class="progress-bar">
+        <div class="progress" style="width: 100%"></div>
+      </div>
+      <p class="step-counter">Step 5 of 5</p>
+    </div>
+    
+    <div class="quiz-content">
+      <h2>Book Your Appointment</h2>
+      <form id="appointmentForm">
+        <div class="form-group">
+          <label for="preferredDay">Preferred Day:</label>
+          <select id="preferredDay" name="preferredDay" required>
+            <option value="">Please select</option>
+            <option value="monday">Monday</option>
+            <option value="tuesday">Tuesday</option>
+            <option value="wednesday">Wednesday</option>
+            <option value="thursday">Thursday</option>
+            <option value="friday">Friday</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="preferredTime">Preferred Time Slot:</label>
+          <select id="preferredTime" name="preferredTime" required>
+            <option value="">Please select a day first</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="appointmentType">Consultation Type:</label>
+          <select id="appointmentType" name="appointmentType" required>
+            <option value="">Please select</option>
+            <option value="telehealth">Telehealth (Video Call)</option>
+            <option value="phone">Phone Consultation</option>
+            <option value="in-person">In-Person Visit</option>
+          </select>
+        </div>
+        
+        <div class="form-actions">
+          <button type="button" class="back-btn" onclick="window.location.href='quiz4.html'">Back</button>
+          <button type="submit" class="submit-btn">Complete Assessment</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('appointmentForm');
+      const daySelect = document.getElementById('preferredDay');
+      const timeSelect = document.getElementById('preferredTime');
+   
+      const timeSlots = [
+        '08:00 AM', '08:30 AM', '09:00 AM', '09:30 AM', '10:00 AM', '10:30 AM',
+        '11:00 AM', '11:30 AM', '12:00 PM', '12:30 PM', '01:00 PM', '01:30 PM',
+        '02:00 PM', '02:30 PM', '03:00 PM', '03:30 PM', '04:00 PM', '04:30 PM',
+        '05:00 PM', '05:30 PM', '06:00 PM'
+      ];
+      
+      daySelect.addEventListener('change', function() {
+        timeSelect.innerHTML = '<option value="">Please select</option>';
+        
+        if (this.value) {
+          timeSlots.forEach(time => {
+            const option = document.createElement('option');
+            option.value = time.toLowerCase().replace(/[:\s]/g, '');
+            option.textContent = time;
+            timeSelect.appendChild(option);
+          });
+        }
+      });
+      
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const preferredDay = daySelect.value;
+        const preferredTime = timeSelect.value;
+        const appointmentType = document.getElementById('appointmentType').value;
+        
+        if (!preferredDay || !preferredTime || !appointmentType) {
+          alert('Please fill in all required fields.');
+          return;
+        }
+        
+        const appointmentData = {
+          preferredDay,
+          preferredTime,
+          appointmentType
+        };
+    
+        alert('Health consultation assessment completed successfully! Your information has been recorded and you will be contacted within 24-48 hours to confirm your appointment details.');
+        window.location.href = 'indexforpatient.html';
+      });
+    });
+  </script>
+</body>
+</html>

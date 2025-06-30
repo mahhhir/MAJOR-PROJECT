@@ -1,1 +1,87 @@
-<li><a href="signup_login.html">Login</a></li>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>index</title>
+  <link rel="stylesheet" href="stylesheet.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo-link">
+      <img class="logo" src="nsw-gov-logo.png" alt="nsw health">
+      <span class="logo-text">NSW Health</span>
+    </a>
+    <nav>
+      <ul class="nav_bar">
+        <li><a href="">Doctors Dashboard</a></li>
+        <li><a href="index.html">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="hero-image">
+    <div class="hero-text">
+      <h1>NSW Health for Rural & Regional Communities</h1>
+      <p>Welcome to the NSW Rural Health Doctors Portal</p>
+      <a href="about us.html" id="mission-button">Access your Dashboard</a>
+    </div>
+  </div>
+
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const newsletterForm = document.getElementById('newsletterForm');
+      const emailInput = document.getElementById('newsletterEmail');
+      
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          const email = emailInput.value.trim();
+          
+
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(email)) {
+            alert('Please enter a valid email address.');
+            return;
+          }
+    
+          alert('Thank you for subscribing to NSW Health updates! You will receive health news and rural healthcare information.');
+          
+
+          emailInput.value = '';
+        });
+      }
+    });
+  </script>
+
+  <footer class="footer">
+    <div class="col-1">
+      <h3>Quick Links</h3>
+      <a href="https://www.health.nsw.gov.au/" target="_blank">NSW Health</a>
+      <a href="https://www.flyingdoctor.org.au/" target="_blank">Royal Flying Doctor Service</a>
+      <a href="https://www.amansw.com.au/" target="_blank">Australian Medical Association NSW</a>
+      <a href="https://www.nswrdn.com.au/" target="_blank">NSW Rural Doctors Network</a>
+    </div>
+
+    <div class="col-2">
+      <h3>Stay Connected</h3>
+      <p>Subscribe to receive health updates and rural healthcare news</p>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" id="newsletterEmail" placeholder="Enter your email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+    <div class="col-3">
+      <h3>Contact Us</h3>
+      <a href="tel:1800022222">1800 022 222</a>
+      <p>24/7 Health Information</p>
+      <div class="contact-info">
+        <p>NSW Health</p>
+        <p>Rural & Regional Services</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

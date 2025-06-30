@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Health Consultation - Medical History</title>
+  <link rel="stylesheet" href="quizstyle.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <div class="quiz-container">
+    <div class="quiz-header">
+      <h1>Health Consultation Quiz</h1>
+      <div class="progress-bar">
+        <div class="progress" style="width: 60%"></div>
+      </div>
+      <p class="step-counter">Step 3 of 5</p>
+    </div>
+    
+    <div class="quiz-content">
+      <h2>Medical History & Medications</h2>
+      <form id="medicalHistoryForm">
+        <div class="form-group">
+          <label for="medications">Current Medications:</label>
+          <textarea id="medications" name="medications" rows="4" placeholder="List all medications you're currently taking, including dosage and frequency. Write 'None' if not taking any medications."></textarea>
+        </div>
+        
+        
+        <div class="form-group">
+          <label for="previousIllnesses">Previous Illnesses & Medical Conditions:</label>
+          <textarea id="previousIllnesses" name="previousIllnesses" rows="4" placeholder="Include any chronic conditions, surgeries, hospitalizations, or significant medical events. Write 'None' if no significant medical history."></textarea>
+        </div>
+     
+        
+        <div class="form-actions">
+          <button type="button" class="back-btn" onclick="window.location.href='quiz2.html'">Back</button>
+          <button type="submit" class="next-btn">Next</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('medicalHistoryForm');
+      
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const medications = document.getElementById('medications').value.trim();
+        const previousIllnesses = document.getElementById('previousIllnesses').value.trim();
+        
+      
+        if (!medications && !allergies && !previousIllnesses && !familyHistory) {
+          alert('Please fill in at least one field. If you have no medical history, medications, or allergies, please write "None" in the relevant fields.');
+          return;
+        }
+        
+        const medicalData = {
+          medications: medications || 'None provided',
+          previousIllnesses: previousIllnesses || 'None provided',
+        };
+        
+        alert('Proceeding to next question.');
+        window.location.href = "quiz4.html";
+      });
+    });
+  </script>
+</body>
+</html>

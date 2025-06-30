@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
               
                 setTimeout(function() {
-                    window.location.href = 'index.html';
+                    window.location.href = 'indexfordoctor.html';
                 }, 1000);
                 
             } else {

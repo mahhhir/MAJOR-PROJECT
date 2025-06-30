@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Figtree", sans-serif;
+  background: linear-gradient(135deg, #ccf5cc 0%, #a6e5a6 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quiz-container {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  width: 90%;
+  margin: 20px;
+  overflow: hidden;
+}
+
+.quiz-header {
+  background: linear-gradient(135deg, #052f05 0%, #2c5e2c 100%);
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+
+.quiz-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.progress-bar {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  height: 8px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.progress {
+  background: #7be37b;
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+.step-counter {
+  font-size: 14px;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+.quiz-content {
+  padding: 40px;
+}
+
+.quiz-content h2 {
+  color: #052f05;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.form-section {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 15px;
+  border-left: 4px solid #7be37b;
+}
+
+.form-section h3 {
+  color: #052f05;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  color: #052f05;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #a6e5a6;
+  border-radius: 10px;
+  font-family: "Figtree", sans-serif;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #7be37b;
+  box-shadow: 0 0 0 3px rgba(123, 227, 123, 0.1);
+  transform: translateY(-1px);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-group select {
+  cursor: pointer;
+}
+
+.char-counter {
+  text-align: right;
+  font-size: 12px;
+  color: #7be37b;
+  margin-top: 5px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  gap: 20px;
+}
+
+.back-btn,
+.next-btn,
+.submit-btn {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 50px;
+  font-family: "Figtree", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.back-btn {
+  background: #6c757d;
+  color: white;
+  border: 2px solid #6c757d;
+}
+
+.back-btn:hover {
+  background: #5a6268;
+  border-color: #5a6268;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(108, 117, 125, 0.3);
+}
+
+.next-btn,
+.submit-btn {
+  background: linear-gradient(45deg, #7be37b, #5fd85f);
+  color: white;
+  border: 2px solid #7be37b;
+  flex: 1;
+  max-width: 200px;
+}
+
+.next-btn:hover,
+.submit-btn:hover {
+  background: linear-gradient(45deg, #5fd85f, #4caf50);
+  border-color: #5fd85f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(123, 227, 123, 0.4);
+}
+
+.submit-btn {
+  background: linear-gradient(45deg, #28a745, #20c997);
+  border-color: #28a745;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(45deg, #218838, #1e7e34);
+  border-color: #1e7e34;
+}
+
+
+@media (max-width: 768px) {
+  .quiz-container {
+    width: 95%;
+    margin: 10px;
+  }
+  
+  .quiz-header {
+    padding: 20px;
+  }
+  
+  .quiz-header h1 {
+    font-size: 24px;
+  }
+  
+  .quiz-content {
+    padding: 20px;
+  }
+  
+  .quiz-content h2 {
+    font-size: 20px;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .back-btn,
+  .next-btn,
+  .submit-btn {
+    width: 100%;
+    max-width: none;
+  }
+  
+  .form-section {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .quiz-container {
+    width: 98%;
+    margin: 5px;
+  }
+  
+  .quiz-header {
+    padding: 15px;
+  }
+  
+  .quiz-content {
+    padding: 15px;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 14px;
+  }
+}

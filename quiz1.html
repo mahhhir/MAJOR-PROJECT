@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Health Consultation - Personal Details</title>
+  <link rel="stylesheet" href="quizstyle.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <div class="quiz-container">
+    <div class="quiz-header">
+      <h1>Health Consultation Quiz</h1>
+      <div class="progress-bar">
+        <div class="progress" style="width: 20%"></div>
+      </div>
+      <p class="step-counter">Step 1 of 5</p>
+    </div>
+    
+    <div class="quiz-content">
+      <h2>Personal Details</h2>
+      <form id="personalDetailsForm">
+        <div class="form-group">
+          <label for="dob">Date of Birth:</label>
+          <input type="date" id="dob" name="dob" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="age">Age:</label>
+          <input type="number" id="age" name="age" min="1" max="120" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="sex">Sex:</label>
+          <select id="sex" name="sex" required>
+            <option value="">Please select</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+            <option value="prefer-not-to-say">Prefer not to say</option>
+          </select>
+        </div>
+        
+        <div class="form-actions">
+          <button type="submit" class="next-btn">Next</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('personalDetailsForm');
+      const dobInput = document.getElementById('dob');
+      const ageInput = document.getElementById('age');
+    
+      
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const dob = dobInput.value;
+        const age = ageInput.value;
+        const sex = document.getElementById('sex').value;
+        
+        if (!dob || !age || !sex) {
+          alert('Please fill in all required fields.');
+          return;
+        }
+        
+        
+        alert('Personal details saved! Proceeding to next question.');
+        window.location.href = "quiz2.html";
+      });
+    });
+  </script>
+</body>
+</html>

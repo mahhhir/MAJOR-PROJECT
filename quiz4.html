@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Health Consultation - Lifestyle</title>
+  <link rel="stylesheet" href="quizstyle.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <div class="quiz-container">
+    <div class="quiz-header">
+      <h1>Health Consultation Quiz</h1>
+      <div class="progress-bar">
+        <div class="progress" style="width: 80%"></div>
+      </div>
+      <p class="step-counter">Step 4 of 5</p>
+    </div>
+    
+    <div class="quiz-content">
+      <h2>Lifestyle Information</h2>
+      <form id="lifestyleForm">
+        <div class="form-section">
+          <h3>Diet & Nutrition</h3>
+          <div class="form-group">
+            <label for="dietType">How would you describe your typical diet?</label>
+            <select id="dietType" name="dietType" required>
+              <option value="">Please select</option>
+              <option value="balanced">Balanced - variety of foods from all groups</option>
+              <option value="vegetarian">Vegetarian</option>
+              <option value="vegan">Vegan</option>
+              <option value="low-carb">Low carbohydrate</option>
+              <option value="high-protein">High protein</option>
+              <option value="irregular">Irregular eating patterns</option>
+            </select>
+          </div>
+        
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-section">
+          <h3>Sleep Patterns</h3>
+          <div class="form-group">
+            <label for="sleepHours">Average hours of sleep per night:</label>
+            <select id="sleepHours" name="sleepHours" required>
+              <option value="">Please select</option>
+              <option value="less-than-5">Less than 5 hours</option>
+              <option value="5-6">5-6 hours</option>
+              <option value="7-8">7-8 hours</option>
+              <option value="9-10">9-10 hours</option>
+              <option value="more-than-10">More than 10 hours</option>
+            </select>
+          </div>
+          
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-section">
+          <h3>Exercise & Activity</h3>
+          <div class="form-group">
+            <label for="exerciseFreq">How often do you exercise?</label>
+            <select id="exerciseFreq" name="exerciseFreq" required>
+              <option value="">Please select</option>
+              <option value="daily">Daily</option>
+              <option value="3-5-times">3-5 times per week</option>
+              <option value="1-2-times">1-2 times per week</option>
+              <option value="rarely">Rarely</option>
+              <option value="never">Never</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-actions">
+          <button type="button" class="back-btn" onclick="window.location.href='quiz3.html'">Back</button>
+          <button type="submit" class="next-btn">Next</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('lifestyleForm');
+      
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const dietType = document.getElementById('dietType').value;
+        const sleepHours = document.getElementById('sleepHours').value;
+        const exerciseFreq = document.getElementById('exerciseFreq').value;
+        
+        if (!dietType || !sleepHours | !exerciseFreq) {
+          alert('Please fill in all required fields.');
+          return;
+        }
+        
+        const lifestyleData = {
+          dietType,
+          sleepHours,
+          exerciseFreq
+        };
+        
+        sessionStorage.setItem('lifestyle', JSON.stringify(lifestyleData));
+        
+        alert('Proceeding to appointment booking.');
+        window.location.href = 'quiz5.html';
+      });
+    });
+  </script>
+</body>
+</html>
